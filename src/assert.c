@@ -9,7 +9,7 @@
 #define CSERT_NEWLINE       "\n"
 #define CSERT_SPACE         " "
 
-#define CSERT_HEAD          "====" CSERT_ANSI_RED "Assert failed!" CSERT_ANSI_RESET
+#define CSERT_HEAD          "====" CSERT_SPACE CSERT_ANSI_RED "Assertion failed!" CSERT_ANSI_RESET
 #define CSERT_LINE          "|"
 
 void csert_assert(
@@ -35,7 +35,7 @@ void csert_assert(
     printf(CSERT_LINE CSERT_SPACE CSERT_HEAD CSERT_NEWLINE);
     printf(CSERT_LINE CSERT_NEWLINE);
 
-    printf(CSERT_LINE CSERT_SPACE "%s" CSERT_NEWLINE, expression);
+    printf(CSERT_LINE CSERT_SPACE "assertion: %s" CSERT_NEWLINE, expression);
     printf(CSERT_LINE CSERT_NEWLINE);
 
     printf(CSERT_LINE CSERT_SPACE "- component: %s" CSERT_NEWLINE, component);
